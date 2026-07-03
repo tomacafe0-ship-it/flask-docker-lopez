@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1>Subir archivo a Google Cloud Storage</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Subir</button>
+</form>
+
+{% if signed_url %}
+<hr>
+<p>Archivo subido correctamente.</p>
+
+<a href="{{ signed_url }}" target="_blank">
+    Ver archivo
+</a>
+
+{% endif %}
+
+</body>
+</html>
